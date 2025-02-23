@@ -9,7 +9,7 @@ jobs:
     steps:
       # Step 1: Checkout code from the repository
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Step 2: Install Pandoc
       - name: Install Pandoc
@@ -21,7 +21,7 @@ jobs:
 
       # Step 4: Upload the generated PDF as an artifact
       - name: Upload Documentation
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: documentation
           path: output.pdf
