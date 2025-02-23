@@ -15,13 +15,26 @@ jobs:
       - name: Install Pandoc
         run: sudo apt-get install pandoc
 
+      - name: prepare output directories
+        run: |
+          for d in */; do
+            mkdir -p output/$d
+          done
+      - name: convert md to PDF
+        run: |
+          find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} -o output/${0%.md}.pdf' {} \;
+      - uses: actions/upload-artifact@master
+        with:
+          name: output
+          path: output
+          
       # Step 3: Convert Markdown to PDF
-      - name: Convert Markdown to PDF
-        run: pandoc input.md -o output.pdf
+      #- name: Convert Markdown to PDF
+      #  run: pandoc input.md -o output.pdf
 
       # Step 4: Upload the generated PDF as an artifact
-      - name: Upload Documentation
-        uses: actions/upload-artifact@v4
-        with:
-          name: documentation
-          path: output.pdf
+      #- name: Upload Documentation
+      #  uses: actions/upload-artifact@v4
+      #  with:
+      #    name: documentation
+      #    path: output.pdf
