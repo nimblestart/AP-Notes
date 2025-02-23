@@ -1,32 +1,27 @@
-# .github/workflows/convert-to-pdf.yml
+name: Generate Documentation
 
-name: Docs to PDF
-# This workflow is triggered on pushes to the repository.
-on:
-  push:
-    branches:
-      - main
-    # Paths can be used to only trigger actions when you have edited certain files, such as a file within the /docs directory
-    paths:
-      - 'docs/**.md'
-      - 'docs/images/**'
+on: [push]
 
 jobs:
-  converttopdf:
-    name: Build PDF
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: baileyjm02/markdown-to-pdf@v1
+      # Step 1: Checkout code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Install Pandoc
+      - name: Install Pandoc
+        run: sudo apt-get install pandoc
+
+      # Step 3: Convert Markdown to PDF
+      - name: Convert Markdown to PDF
+        run: pandoc input.md -o output.pdf
+
+      # Step 4: Upload the generated PDF as an artifact
+      - name: Upload Documentation
+        uses: actions/upload-artifact@v2
         with:
-          input_dir: docs
-          output_dir: pdfs
-          images_dir: docs/images
-          # for example <img src="./images/file-name.png">
-          image_import: ./images
-          # Default is true, can set to false to only get PDF files
-          build_html: false
-      - uses: actions/upload-artifact@v3
-        with:
-          name: docs
-          path: pdfs
+          name: documentation
+          path: output.pdf
