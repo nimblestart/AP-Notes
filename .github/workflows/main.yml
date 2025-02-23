@@ -23,11 +23,12 @@ jobs:
     - name: Convert Markdown to PDF
       run: |
         mkdir -p pdfs
-        for file in $(find . -name "*.md"); do
+        # Use find with -print0 and xargs -0 to handle spaces in filenames
+        find . -name "*.md" -print0 | while IFS= read -r -d '' file; do
           pdf_name="pdfs/$(basename "$file" .md).pdf"
           pandoc "$file" -o "$pdf_name" --pdf-engine=xelatex
         done
-
+        
     - name: Upload PDFs as artifact
       uses: actions/upload-artifact@v4
       with:
