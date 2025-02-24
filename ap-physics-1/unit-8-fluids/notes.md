@@ -1,6 +1,3 @@
-Got it! Here are your notes with single $ symbols for the equations:
-
-```markdown
 ### **Unit 8: Fluids**
 
 #### **1. Properties of Fluids**
@@ -24,6 +21,3 @@ Got it! Here are your notes with single $ symbols for the equations:
 #### **5. Applications of Fluid Dynamics**
 - **Venturi Effect**: Reduction in fluid pressure when a fluid flows through a constricted section of pipe.
 - **Airplane Wings**: Shape of wings creates different velocities above and below, generating lift due to pressure differences.
-```
-
-Feel free to copy and paste this into your notes. If you need any more help, just let me know!
