@@ -75,7 +75,7 @@ find "$REPO_DIR" -mindepth 1 -maxdepth 1 -type d | while read -r SUBJECT_DIR; do
         -V geometry:left=0.5in \
         -V geometry:right=0.25in \
         -V fontsize=11pt \
-        -V mainfont="Roboto" \
+        -V mainfont="Ubuntu" \
         -V title="$CLEAN_SUBJECT_NAME Notes" \
         -V author="\\cap imblestart - $(date +'%B %Y')" \
         -o "$OUTPUT" $FILES \
