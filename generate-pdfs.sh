@@ -73,7 +73,7 @@ find "$REPO_DIR" -mindepth 1 -maxdepth 1 -type d | while read -r SUBJECT_DIR; do
         -V fontsize=11pt \
         -V mainfont="Roboto" \
         -V title="$CLEAN_SUBJECT_NAME Notes" \
-        -V author="∩imblestart, ($(date +'%B %Y'))" \
+        -V author="\cap ∩imblestart, ($(date +'%B %Y'))" \
         -o "$OUTPUT" $FILES \
         --variable=header-includes="
             \usepackage{fancyhdr}
