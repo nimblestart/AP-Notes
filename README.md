@@ -2,8 +2,8 @@
 A structured collection of notes for AP subjects.  These are mostly generated using LLMs (ChatGPT, DeepSeek) by prompting to generate notes in markdown format using Khan Academy as reference. The generated markdowns require clean-up and are also reviewed for comleteness and accuracy.
 
 ## Subjects  
-- [AP Physics 1](ap-physics-1/README.md)
 - [AP Calculus AB](ap-calculus-ab/README.md)
+- [AP Physics 1](ap-physics-1/README.md)
 
 ## How to Use  
 1. Click a subject above to view its units.  
@@ -11,7 +11,7 @@ A structured collection of notes for AP subjects.  These are mostly generated us
 3. Tou can also download the [PDF Notes](pdfs/)
 
 ## Contributing guidelines  
-*Contribution guidelines are in [CONTRIBUTING.md](CONTRIBUTING.md).*
+- *Contribution guidelines are in [CONTRIBUTING.md](CONTRIBUTING.md).*
 
 ## Things to consider when running the scripts locally
 1. For windows allow ability to run scripts using below
