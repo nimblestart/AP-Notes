@@ -1,5 +1,3 @@
-# Just a quick reminder, make sure that Pandoc and XeLaTeX are properly installed and available in your system's PATH. If the issue with corrupted PDFs persists, it could be worth verifying if the content in the markdown files is properly formatted, especially if any of the files have unusual characters or formatting.
-
 # Define paths
 $REPO_DIR = "."
 $PDF_DIR = "$REPO_DIR\pdfs"
@@ -69,21 +67,25 @@ Get-ChildItem -Path $REPO_DIR -Directory | ForEach-Object {
     pandoc `
         --pdf-engine=xelatex `
         -V geometry:letterpaper `
-        -V geometry:top=0.25in `
-        -V geometry:bottom=0.5in `
+        -V geometry:top=0.5in `
+        -V geometry:bottom=0.7in `
         -V geometry:left=0.5in `
-        -V geometry:right=0.25in `
+        -V geometry:right=0.5in `
         -V fontsize=11pt `
         -V mainfont="Calibri" `
         -V title="$CLEAN_SUBJECT_NAME Notes" `
-        -V author="\cap imblestart - $(Get-Date -Format 'MMMM yyyy')" `
+        -V author="\cap imblestart, ($(Get-Date -Format 'MMM yyyy'))" `
         -o $OUTPUT $FILES.FullName `
         --variable=header-includes="
-            \usepackage{fancyhdr}
-            \fancyhf{} % Clear all header and footer fields
-            \fancyfoot[C]{\textit{$CLEAN_SUBJECT_NAME Notes} \hfill \thepage}
-            \renewcommand{\headrulewidth}{0pt} % Remove the header line
-            \pagestyle{fancy}  "  
+        \usepackage{fancyhdr}
+        \fancyhf{} % Clear all header and footer fields
+        \fancyfoot[C]{%
+            \hrule % Add a horizontal rule above the footer
+            \vspace{2pt} % Add a small vertical space
+            \textit{$CLEAN_SUBJECT_NAME Notes} \hfill \thepage%
+        }
+        \renewcommand{\headrulewidth}{0pt} % Remove the header line
+        \pagestyle{fancy}  " 
     if ($?) {
         Write-Host "Successfully generated PDF for subject $CLEAN_SUBJECT_NAME at $OUTPUT"
     } else {

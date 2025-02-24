@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Pandoc
+      - name: Install font Roboto
         run: sudo apt-get install fonts-roboto
       - name: Install Pandoc
         run: sudo apt-get install pandoc

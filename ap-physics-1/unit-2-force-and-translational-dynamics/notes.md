@@ -1,4 +1,4 @@
-# Unit 2: Dynamics
+# Unit 2: Force and translational dynamics
 Dynamics is the study of forces and how they affect the motion of objects. It builds on the concepts of kinematics by introducing the causes of motion.
 
 ## 2.1 Newton's Laws of Motion
