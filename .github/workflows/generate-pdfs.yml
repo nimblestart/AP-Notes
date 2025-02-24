@@ -8,6 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Pandoc
+        run: sudo apt-get install fonts-roboto
+      - name: Install Pandoc
         run: sudo apt-get install pandoc
       - name: Install LaTeX
         run: sudo apt-get install texlive-xetex texlive-fonts-recommended
