@@ -38,10 +38,10 @@ Dynamics is the study of forces and how they affect the motion of objects. It bu
 ## 2.4 Inclined Planes
 - Forces on an object on an inclined plane can be broken into components parallel and perpendicular to the surface.
 
-| **Force Component**       | **Description**                                                                 | **Equation**                                                                 |
-|--------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| **Parallel to Incline**   | The component of gravity acting down the incline.                                | $F_{g, \parallel}} = mg \sin \theta$                                       |
-| **Perpendicular to Incline** | The component of gravity acting perpendicular to the incline.                  | $F_{g, \perp}} = mg \cos \theta$                                           |
+| **Force Component**       | **Description**                                                | **Equation**                         |
+|--------------------------|----------------------------------------------------------------|--------------------------------------|
+| **Parallel to Incline**   | The component of gravity acting down the incline.             | $F_{g, \parallel} = mg \sin \theta$ |
+| **Perpendicular to Incline** | The component of gravity acting perpendicular to the incline. | $F_{g, \perp} = mg \cos \theta$    |
 
 ---
 

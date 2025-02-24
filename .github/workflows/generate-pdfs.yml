@@ -1,0 +1,22 @@
+name: Generate PDFs
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LaTeX
+        run: sudo apt-get install texlive-xetex texlive-fonts-recommended
+      - name: Generate PDFs
+        run: |
+          chmod +x generate-pdfs.sh
+          ./generate-pdfs.sh
+      - name: Commit PDFs
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add pdfs/
+          git commit -m "Auto-generated PDFs" || echo "No changes to commit"
+          git push
