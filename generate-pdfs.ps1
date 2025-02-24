@@ -58,14 +58,9 @@ Get-ChildItem -Path $REPO_DIR -Directory | ForEach-Object {
     $FILES | ForEach-Object { Write-Host "  - $($_.FullName)" }
 
     # Output PDF filename
-    $OUTPUT = Join-Path -Path $PDF_DIR -ChildPath "$SUBJECT.pdf"
+    $OUTPUT = Join-Path -Path $PDF_DIR -ChildPath "$CLEAN_SUBJECT_NAME.pdf"
 
-    Write-Host "Generating PDF for subject $SUBJECT at $OUTPUT"
-
-    # Path to the LaTeX template
-    $TEMPLATE_PATH = "template.tex"  # Adjust this path to your template's location
-    #--template=$TEMPLATE_PATH `
-    #--variable=header-includes="\usepackage{fancyhdr}\fancyfoot$CLEAN_SUBJECT_NAME Notes\pagestyle{fancy}"    
+    Write-Host "Generating PDF for subject $CLEAN_SUBJECT_NAME at $OUTPUT"
 
     # Run Pandoc without a custom template
     pandoc `
@@ -87,8 +82,8 @@ Get-ChildItem -Path $REPO_DIR -Directory | ForEach-Object {
             \renewcommand{\headrulewidth}{0pt} % Remove the header line
             \pagestyle{fancy}  "  
     if ($?) {
-        Write-Host "Successfully generated PDF for subject $SUBJECT at $OUTPUT"
+        Write-Host "Successfully generated PDF for subject $CLEAN_SUBJECT_NAME at $OUTPUT"
     } else {
-        Write-Host "Failed to generate PDF for subject $SUBJECT. Check Pandoc/LaTeX installation."
+        Write-Host "Failed to generate PDF for subject $CLEAN_SUBJECT_NAME. Check Pandoc/LaTeX installation."
     }
 }
