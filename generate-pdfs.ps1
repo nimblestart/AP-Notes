@@ -65,19 +65,27 @@ Get-ChildItem -Path $REPO_DIR -Directory | ForEach-Object {
     # Path to the LaTeX template
     $TEMPLATE_PATH = "template.tex"  # Adjust this path to your template's location
     #--template=$TEMPLATE_PATH `
+    #--variable=header-includes="\usepackage{fancyhdr}\fancyfoot$CLEAN_SUBJECT_NAME Notes\pagestyle{fancy}"    
 
     # Run Pandoc without a custom template
     pandoc `
         --pdf-engine=xelatex `
         -V geometry:letterpaper `
-        -V geometry:margin=0.5in `
+        -V geometry:top=0.25in `
+        -V geometry:bottom=0.5in `
+        -V geometry:left=0.5in `
+        -V geometry:right=0.25in `
         -V fontsize=11pt `
+        -V mainfont="Calibri" `
         -V title="$CLEAN_SUBJECT_NAME Notes" `
-        -V author="" `
-        -V date="$(Get-Date -Format 'MMMM yyyy')" `
-        -o $OUTPUT `
-        $FILES.FullName
-
+        -V author="\cap imblestart - $(Get-Date -Format 'MMMM yyyy')" `
+        -o $OUTPUT $FILES.FullName `
+        --variable=header-includes="
+            \usepackage{fancyhdr}
+            \fancyhf{} % Clear all header and footer fields
+            \fancyfoot[C]{\textit{$CLEAN_SUBJECT_NAME Notes} \hfill \thepage}
+            \renewcommand{\headrulewidth}{0pt} % Remove the header line
+            \pagestyle{fancy}  "  
     if ($?) {
         Write-Host "Successfully generated PDF for subject $SUBJECT at $OUTPUT"
     } else {

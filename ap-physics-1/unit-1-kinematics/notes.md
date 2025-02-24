@@ -13,13 +13,13 @@ Kinematics is the study of motion without considering the forces that cause it. 
 
 ## 1.3 Displacement, Velocity, and Acceleration
 
-| **Quantity**            | **Description**                                                                 | **Equation**                                                                 |
-|--------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| **Displacement**         | Displacement is the straight-line distance from where the object started to where it ended. The change in position of an object.         | $\Delta \vec{x} = \vec{x}_f - \vec{x}_i$                                   |
-| **Average Velocity**     | The rate of change of displacement over a time interval.                        | $\vec{v}_{\text{avg}} = \frac{\Delta \vec{x}}{\Delta t}$                   |
-| **Instantaneous Velocity** | The velocity of an object at a specific moment in time.                        | $\vec{v} = \frac{d\vec{x}}{dt}$                                            |
-| **Average Acceleration** | The rate of change of velocity over a time interval.                            | $\vec{a}_{\text{avg}} = \frac{\Delta \vec{v}}{\Delta t}$                   |
-| **Instantaneous Acceleration** | The acceleration of an object at a specific moment in time.                  | $\vec{a} = \frac{d\vec{v}}{dt}$                                            |
+| **Quantity**               | **Description**                                                                                                                          | **Equation**                                             |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| Displacement               | The straight-line distance from where the object started to where it ended. The change in position of an object.         | $\Delta \vec{x} = \vec{x}_f - \vec{x}_i$                 |
+| Average Velocity           | The rate of change of displacement over a time interval.                                                                                 | $\vec{v}_{\text{avg}} = \frac{\Delta \vec{x}}{\Delta t}$ |
+| Instantaneous Velocity     | The velocity of an object at a specific moment in time.                                                                                  | $\vec{v} = \frac{d\vec{x}}{dt}$                          |
+| Average Acceleration       | The rate of change of velocity over a time interval.                                                                                     | $\vec{a}_{\text{avg}} = \frac{\Delta \vec{v}}{\Delta t}$ |
+| Instantaneous Acceleration | The acceleration of an object at a specific moment in time.                                                                              | $\vec{a} = \frac{d\vec{v}}{dt}$                          |
 
 ## 1.4 Equations of Motion (UAM - Uniformly Accelerated Motion)
 |                      | **Description**                                                                 | **Equation**                                                                 |
