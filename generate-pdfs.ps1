@@ -32,6 +32,9 @@ Get-ChildItem -Path $REPO_DIR -Directory | ForEach-Object {
     $TextInfo = (Get-Culture).TextInfo
     $CLEAN_SUBJECT_NAME = $TextInfo.ToTitleCase($SUBJECT.ToLower())
 
+    # Special case for "AP"
+    $CLEAN_SUBJECT_NAME = $CLEAN_SUBJECT_NAME -replace '\bAp\b', 'AP'
+
     Write-Output "Formatted Subject Name: $CLEAN_SUBJECT_NAME"
 
     # Gather all unit notes (exclude README.md and resources.md)
